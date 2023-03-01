@@ -14,7 +14,7 @@ jobs:
             const result = branch.split('/')[1]
             console.log(result)
             core.exportVariable('SubName', result);
-            core.exportVariable('SubZipName', `${result}.zip`);
+            core.exportVariable('SubZipName', `${result}.sub`);
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.head_ref }}

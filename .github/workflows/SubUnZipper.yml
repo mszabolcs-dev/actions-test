@@ -23,6 +23,7 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Action"
+          git add .
           git commit -a -m "Adding Sub xml"
       - name: Push changes
         uses: ad-m/github-push-action@master

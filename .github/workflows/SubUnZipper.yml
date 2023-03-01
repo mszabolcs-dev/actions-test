@@ -10,7 +10,7 @@ jobs:
         id: set-result
         with:
           script: |
-            const branch = ${{ github.head_ref }}
+            const branch = `${{ github.head_ref }}`
             const result = branch.split('/')[1]
             console.log(result)
             core.exportVariable('SubName', result);

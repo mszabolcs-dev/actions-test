@@ -16,12 +16,11 @@ jobs:
             core.exportVariable('SubName', result);
             core.exportVariable('SubZipName', `${result}.zip`);
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
       - uses: montudor/action-zip@v1
         with:
           args: unzip -qq ${{ env.SubZipName }} -d ${{ env.SubName }}
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.head_ref }}
       - name: Commit files
         run: |
           git config --local user.email "actions@github.com"

@@ -19,9 +19,9 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
       - name: Decompressing sub
-        uses: NSCoder/archive-action@v1.0.0
+        uses: edgarrc/action-7z@v1
         with:
-          args: unzip -qq ${{ env.SubZipName }} -d ${{ env.SubName }}
+          args: 7z x ${{ env.SubZipName }} ${{ env.SubName }}
       - name: Commit files
         run: |
           git config --local user.email "actions@github.com"

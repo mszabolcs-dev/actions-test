@@ -18,7 +18,8 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.head_ref }}
-      - uses: montudor/action-zip@v1
+      - name: Decompressing sub
+        uses: NSCoder/archive-action@v1.0.0
         with:
           args: unzip -qq ${{ env.SubZipName }} -d ${{ env.SubName }}
       - name: Commit files

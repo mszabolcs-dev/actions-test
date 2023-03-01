@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is unzipping a Sub!
 on:
   pull_request:
     branches: 
-      - sub/*
+      - 'sub/*'
 jobs:
   unzip_sub:
     name: Sub Unzipper
